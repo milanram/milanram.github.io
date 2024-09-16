@@ -19,21 +19,39 @@
             padding: 20px;
             text-align: center;
         }
-        nav ul {
+       nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: space-between;
         }
+
         nav li {
-            display: inline-block;   
-            padding: 10px;
+            display: inline-block;
+            position: relative;
         }
-        nav a   
-        {
-            font-family: Calibri, sans-serif;
+
+        nav a {
+            text-decoration: none;
             color: #fff;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            background-color: #444;
+        }
+
+        nav li:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #fff;
         }
         section {
             margin: 20px;
