@@ -6,17 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Product Management Stuff </title>
     <style>
-        /* General reset for better cross-browser consistency */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}        
         /* Sidebar styling */
         .sidebar {
             height: 100%;
-            width: 125px;
+            width: 150px; /* Fixed width for the sidebar */
             position: fixed;
             left: 0;
             top: 0;
@@ -54,14 +52,17 @@
         
         /* Content styling */
         .content {
-            margin-left: 160px;
+            margin-left: 160px; /* The margin-left should match or exceed the sidebar's width */
             padding: 20px;
+            overflow: hidden; /* Ensures content doesn't overflow the viewport */
         }
         
         h1, p {
             font-family: Arial, sans-serif;
         }
-                @media screen and (max-width: 768px) {
+        
+        /* Responsive Sidebar for Mobile */
+        @media screen and (max-width: 768px) {
             .sidebar {
                 width: 100%;
                 height: auto;
@@ -75,7 +76,7 @@
             .content {
                 margin-left: 0;
             }
-        }     
+        }   
         body {
             font-family: Calibri, sans-serif;
             margin: 0;
@@ -118,7 +119,7 @@
 </head>
 <body>
     <div class="sidebar">
-        <h2>Sidebar Menu</h2>
+        <h2>Product Management Stuff</h2>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
