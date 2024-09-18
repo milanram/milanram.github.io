@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Product Management Stuff </title>
-</head>
+    <title>Product Management Stuff</title>
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}        
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         /* Sidebar styling */
         .sidebar {
             height: 100%;
@@ -22,35 +22,85 @@
             background-color: #111;
             padding-top: 20px;
         }
-        
+
         .sidebar h2 {
             color: white;
             text-align: center;
             font-size: 18px;
             margin-bottom: 20px;
         }
-        
+
         .sidebar ul {
             list-style-type: none;
             padding-left: 0;
         }
-        
+
         .sidebar ul li {
             padding: 10px;
             text-align: center;
         }
-        
+
         .sidebar ul li a {
             color: white;
             text-decoration: none;
             font-size: 16px;
             display: block;
         }
-        
+
         .sidebar ul li a:hover {
             background-color: #575757;
         }
-               
+
+        /* Main Content styling */
+        .content {
+            margin-left: 160px; /* The margin-left should match or exceed the sidebar's width */
+            padding: 20px;
+            overflow: hidden; /* Ensures content doesn't overflow the viewport */
+        }
+
+        body {
+            font-family: Calibri, sans-serif;
+            background-color: #191970;
+            color: #333;
+        }
+
+        header {
+            background-color: #191970;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #191970;
+            border-bottom: 2px solid #191970;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px;
+            padding: 10px;
+            color: #666;
+        }
+
         /* Responsive Sidebar for Mobile */
         @media screen and (max-width: 768px) {
             .sidebar {
@@ -58,60 +108,17 @@
                 height: auto;
                 position: relative;
             }
-        
-            .sidebar ul li {
-                display: inline-block;
-            }
-        
+
             .content {
                 margin-left: 0;
             }
-        }   
-        body {
-                    /* Content styling */
-        .content {
-            margin-left: 160px; /* The margin-left should match or exceed the sidebar's width */
-            padding: 20px;
-            overflow: hidden; /* Ensures content doesn't overflow the viewport */
-        }
-            font-family: Calibri, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #191970;
-            color: #333;
-        }
-        header {
-            background-color: #191970;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: 	#191970;
-            border-bottom: 2px solid #191970;
-            padding-bottom: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            padding: 5px 0;
-        }
-        footer {
-            text-align: center;
-            margin: 20px;
-            padding: 10px;
-            color: #666;
+
+            .sidebar ul li {
+                display: inline-block;
+            }
         }
     </style>
+</head>
 <body>
     <div class="sidebar">
         <h2>Product Management Stuff</h2>
@@ -122,6 +129,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
+    
 <header>
     <h1>Product Management Stuff</h1>
     <p>A simple guide to product by Milan Ramadev</p>
@@ -131,6 +139,8 @@
     height="225"/>
 </header>
 
+<!-- Main Content -->
+<div class="content">
 <section>
     <h2>Musings and Manifesto</h2>
     <p>There is no cookbook as every company has its own unique culture/business model and customers. You need to craft your own way through its product landscape and the need to incorporate unique strategy will destroy most cookbooks on the web. To be a product leader, get comfortable with data-driven decision making and using data when you get it with confidence. Bias towards taking action in most situations and promote high velocity decision making, especially if an issue is a 2-way door (reversible). Be the most comfortable person with ambiguity on the team and set a vision and tenets. Also, don't forget, keep it simple, cut your words in half and cut it again. Focus on an MVP, Minimum Loveable Product or Minimum Sellable Product (b2b) when building a first iteration of product in most cases for sake of efficiency when optimizing from real feedback. The faster companies get their products to market and start the iteration process early, the better the outcomes (usually).</p>
@@ -261,6 +271,6 @@
 <footer>
     <p>&copy; 2024 Milan Ramadev. All Rights Reserved.</p>
 </footer>
-
+</div>
 </body>
 </html>
