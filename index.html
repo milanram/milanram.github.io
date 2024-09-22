@@ -80,6 +80,45 @@
           background-color: #222;
         }
 
+        /* Mobile Styles for Sidebar */
+            @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+        
+            .content {
+                margin-left: 0;
+            }
+        
+            .sidebar ul {
+                padding: 0; /* Remove padding from ul */
+            }
+        
+            .sidebar ul li {
+                display: block; /* Ensure each item is on a new line */
+                padding: 10px 0; /* Add padding for spacing */
+                text-align: center; /* Center-align text */
+            }
+        
+            .sidebar.active .menu-wrapper {
+                height: auto; /* Show the menu content */
+            }
+        
+            .sidebar.active {
+                background-color: #222; /* Change sidebar background on active state */
+            }
+        
+            button#menu-toggle {
+                position: fixed; /* Fix the button at the top */
+                top: 10px; /* Adjust position */
+                left: 10px; /* Adjust position */
+                z-index: 10; /* Ensure it's above other content */
+            }
+        }
+
+
         /* Main Content styling */
         .content {
             margin-left: 160px; /* The margin-left should match or exceed the sidebar's width */
