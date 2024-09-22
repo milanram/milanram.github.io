@@ -4,52 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Product Management Stuff - About</title>
+    <title>Product Management Stuff</title>
     <style>
-        * {
+         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+    
         /* Sidebar styling */
         .sidebar {
             height: 100%;
-            width: 150px; /* Fixed width for the sidebar */
+            width: 0; /* Initially hide the sidebar */
             position: fixed;
             left: 0;
             top: 0;
             background-color: #111;
             padding-top: 20px;
+            transition: all 0.3s ease-in-out; /* Add a transition for smooth animation */
         }
-
+        
         .sidebar h2 {
-            color: white;
-            text-align: center;
-            font-size: 18px;
-            margin-bottom: 20px;
+          color: white;
+          text-align: center;
+          font-size: 18px;
+          margin-bottom: 20px;
         }
-
+        
         .sidebar ul {
-            list-style-type: none;
-            padding-left: 0;
+          list-style-type: none;
+          padding-left: 0;
         }
-
+        
         .sidebar ul li {
-            padding: 10px;
-            text-align: center;
+          padding: 10px;
+          text-align: center;
         }
-
+        
         .sidebar ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            display: block;
+          color: white;
+          text-decoration: none;
+          font-size: 16px;
+          display: block;
+        }
+        
+        .sidebar ul li a:hover {
+          background-color: #575757;
+        }
+        
+        .sidebar button#menu-toggle {
+          position: absolute; /* Position the button inside sidebar */
+          top: 10px; /* Adjust position as needed */
+          left: 10px; /* Adjust position as needed */
+          background-color: transparent; /* Transparent background */
+          border: none; /* Remove border */
+          cursor: pointer; /* Indicate clickable element */
+          font-size: 35px; /* Adjust font size as needed */
+          color: white; /* Match sidebar text color */
+        }
+        
+        .menu-wrapper {
+          transition: all 0.3s ease-in-out; /* Smooth transition effect */
+          height: 0; /* Initially hide the menu content */
+          overflow: hidden; /* Prevent content overflow when closed */
+        }
+        
+        /* Style for open state */
+        .sidebar.active .menu-wrapper {
+          height: 150px; /* Show the menu content */
+        }
+        
+        /* Optional: Change sidebar background on active state */
+        .sidebar.active {
+        width: 150px; /* Adjust the width as needed */
+          background-color: #222;
         }
 
-        .sidebar ul li a:hover {
-            background-color: #575757;
+        /* Mobile Styles for Sidebar */
+            @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative; /* Change to relative for proper stacking */
         }
+    
+        .content {
+            margin-left: 0; /* No margin on mobile */
+        }
+    
+        .sidebar ul {
+            padding: 0; /* Remove padding from ul */
+            margin-top: 60px; /* Add margin to push menu down */
+        }
+    
+        .sidebar ul li {
+            display: block; /* Ensure each item is on a new line */
+            padding: 10px 0; /* Add padding for spacing */
+            text-align: center; /* Center-align text */
+        }
+    
+        .sidebar.active .menu-wrapper {
+            height: auto; /* Show the menu content */
+        }
+    
+        .sidebar.active {
+            background-color: #222; /* Change sidebar background on active state */
+        }
+    
+        button#menu-toggle {
+            position: fixed; /* Fix the button at the top */
+            top: 10px; /* Adjust position */
+            left: 10px; /* Adjust position */
+            z-index: 10; /* Ensure it's above other content */
+            }
+        }
+
 
         /* Main Content styling */
         .content {
@@ -67,16 +136,20 @@
         header {
             background-color: #191970;
             color: #fff;
-            padding: 15px 15px 15px 15px;
+            padding: 15px;
             text-align: center;
         }
+
         header img {
-            margin-top: 10px; /* Adjust to the desired space */
+            max-width: 300px; /* Responsive width */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Centering */
+            margin: 10px auto; /* Top/bottom margin and auto left/right margin */
         }
-        img {
-          width: 300px; /* Adjust the maximum width to your desired percentage */
-          height: auto;
-        }
+        img {
+          width: 300px; /* Adjust the maximum width to your desired percentage */
+          height: auto;
+        }
         section {
             margin: 20px;
             padding: 20px;
@@ -122,17 +195,25 @@
             .sidebar ul li {
                 display: inline-block;
             }
+             .sidebar.active .menu-wrapper {
+      height: 100%; /* Show the menu content */
+    }
+
+    .sidebar.active {
+      background-color: #222; /* Change sidebar background on active state */
+    }
         }
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about_subpage.html">About</a></li>
-            <li><a href="mailto:mram1221@proton.me">Contact</a></li>
-        </ul>
-    </div>
+   <div class="sidebar">
+    <button id="menu-toggle">&#9776;</button>
+    <ul class="menu-wrapper">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about_subpage.html">About</a></li>
+      <li><a href="mailto:mram1221@proton.me">Contact</a></li>
+    </ul>
+  </div>
     
 <header>
     <h1><img src="logo_product_management_stuff.jpeg"
@@ -197,5 +278,17 @@
     <p>&copy; 2024 Milan Ramadev. All Rights Reserved.</p>
 </footer>
 </div>
+    <div class="content">
+    </div>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuWrapper = document.querySelector('.menu-wrapper');
+    const sidebar = document.querySelector('.sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active'); // Toggle active class on sidebar
+    });
+  </script>
 </body>
+</script>
 </html>
