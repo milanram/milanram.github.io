@@ -94,14 +94,18 @@
         }
 
         header {
-            background-color: #191970;
-            color: #fff;
-            padding: 15px 15px 15px 15px;
-            text-align: center;
-        }
-        header img {
-            margin-top: 10px; /* Adjust to the desired space */
-        }
+            background-color: #191970;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 100%; /* Responsive width */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Centering */
+            margin: 10px auto; /* Top/bottom margin and auto left/right margin */
+        }
         img {
           width: 300px; /* Adjust the maximum width to your desired percentage */
           height: auto;
