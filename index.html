@@ -149,17 +149,25 @@
             .sidebar ul li {
                 display: inline-block;
             }
+             .sidebar.active .menu-wrapper {
+      height: 100%; /* Show the menu content */
+    }
+
+    .sidebar.active {
+      background-color: #222; /* Change sidebar background on active state */
+    }
         }
     </style>
 </head>
 <body>
-  <div class="sidebar">
-  <button id="menu-toggle">&#9776;</button>  <ul class="menu-wrapper">
-    <li><a href="#home">Home</a></li>
-    <li><a href="about_subpage.html">About</a></li>
-    <li><a href="mailto:mram1221@proton.me">Contact</a></li>
-      </ul>
-    </div>
+   <div class="sidebar">
+    <button id="menu-toggle">&#9776;</button>
+    <ul class="menu-wrapper">
+      <li><a href="#home">Home</a></li>
+      <li><a href="about_subpage.html">About</a></li>
+      <li><a href="mailto:mram1221@proton.me">Contact</a></li>
+    </ul>
+  </div>
     
 <header>
     <h1><img src="logo_product_management_stuff.jpeg"
@@ -249,13 +257,17 @@
     <p>&copy; 2024 Milan Ramadev. All Rights Reserved.</p>
 </footer>
 </div>
-</body>
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menuWrapper = document.querySelector('.menu-wrapper');
+    <div class="content">
+    </div>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuWrapper = document.querySelector('.menu-wrapper');
+    const sidebar = document.querySelector('.sidebar');
 
-  menuToggle.addEventListener('click', () => {
-    menuWrapper.classList.toggle('active'); // Toggle active class on sidebar
-  });
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active'); // Toggle active class on sidebar
+    });
+  </script>
+</body>
 </script>
 </html>
