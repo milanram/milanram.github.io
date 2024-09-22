@@ -94,17 +94,21 @@
         }
 
         header {
+            display: flex; /* Use flexbox for centering */
+            justify-content: center; /* Center the image horizontally */
+            align-items: center; /* Center the image vertically */
             background-color: #191970;
             color: #fff;
             padding: 15px 15px 15px 15px;
-            text-align: center;
         }
         header img {
             margin-top: 10px; /* Adjust to the desired space */
         }
         img {
-          width: 300px; /* Adjust the maximum width to your desired percentage */
-          height: auto;
+           margin: 0; /* Remove any margin to ensure centering */
+          /* Adjust the width and height as needed */
+          width: 300px; /* Adjust the maximum width */
+          height: auto;  /* Maintain aspect ratio */
         }
         section {
             margin: 20px;
