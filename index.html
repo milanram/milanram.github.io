@@ -82,39 +82,40 @@
 
         /* Mobile Styles for Sidebar */
             @media screen and (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-        
-            .content {
-                margin-left: 0;
-            }
-        
-            .sidebar ul {
-                padding: 0; /* Remove padding from ul */
-            }
-        
-            .sidebar ul li {
-                display: block; /* Ensure each item is on a new line */
-                padding: 10px 0; /* Add padding for spacing */
-                text-align: center; /* Center-align text */
-            }
-        
-            .sidebar.active .menu-wrapper {
-                height: auto; /* Show the menu content */
-            }
-        
-            .sidebar.active {
-                background-color: #222; /* Change sidebar background on active state */
-            }
-        
-            button#menu-toggle {
-                position: fixed; /* Fix the button at the top */
-                top: 10px; /* Adjust position */
-                left: 10px; /* Adjust position */
-                z-index: 10; /* Ensure it's above other content */
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative; /* Change to relative for proper stacking */
+        }
+    
+        .content {
+            margin-left: 0; /* No margin on mobile */
+        }
+    
+        .sidebar ul {
+            padding: 0; /* Remove padding from ul */
+            margin-top: 60px; /* Add margin to push menu down */
+        }
+    
+        .sidebar ul li {
+            display: block; /* Ensure each item is on a new line */
+            padding: 10px 0; /* Add padding for spacing */
+            text-align: center; /* Center-align text */
+        }
+    
+        .sidebar.active .menu-wrapper {
+            height: auto; /* Show the menu content */
+        }
+    
+        .sidebar.active {
+            background-color: #222; /* Change sidebar background on active state */
+        }
+    
+        button#menu-toggle {
+            position: fixed; /* Fix the button at the top */
+            top: 10px; /* Adjust position */
+            left: 10px; /* Adjust position */
+            z-index: 10; /* Ensure it's above other content */
             }
         }
 
