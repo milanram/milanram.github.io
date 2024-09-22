@@ -15,12 +15,13 @@
         /* Sidebar styling */
         .sidebar {
           height: 100%;
-          width: 100%; /* Fixed width for the sidebar */
+          width: 0; /* Initially hide the sidebar */
           position: fixed;
           left: 0;
           top: 0;
           background-color: #111;
           padding-top: 20px;
+          transition: all 0.3s ease-in-out; /* Add a transition for smooth animation */
         }
         
         .sidebar h2 {
@@ -75,6 +76,7 @@
         
         /* Optional: Change sidebar background on active state */
         .sidebar.active {
+        width: 150px; /* Adjust the width as needed */
           background-color: #222;
         }
 
